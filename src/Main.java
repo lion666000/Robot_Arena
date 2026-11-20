@@ -1,13 +1,34 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+    Robot lehkyRobot = new LehkyRobot();
+    Robot obrnenyRobot = new ObrnenyRobot();
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+    System.out.println("\n=========================================================== Lehký zaútočí na obrněného\n");
+
+    lehkyRobot.utoc(obrnenyRobot);
+    System.out.println(lehkyRobot);
+    System.out.println(obrnenyRobot);
+
+    System.out.println("\n=========================================================== Obrněný zaútočí na lehkého\n");
+
+    obrnenyRobot.utoc(lehkyRobot);
+    System.out.println(lehkyRobot);
+    System.out.println(obrnenyRobot);
+
+    System.out.println("\n=========================================================== Obrněný dostane zásah o síle 5\n");
+
+    obrnenyRobot.prijmiZasah(5);
+    System.out.println(lehkyRobot);
+    System.out.println(obrnenyRobot);
+
+    System.out.println("\n=========================================================== Obrněný dostane zásah o síle 200\n");
+
+    obrnenyRobot.prijmiZasah(200);
+    System.out.println(lehkyRobot);
+    System.out.println(obrnenyRobot);
+
+    System.out.println("\n=========================================================== Obrněný se pokusí zaútočit na lehkého\n");
+
+    obrnenyRobot.utoc(lehkyRobot);
+    System.out.println(lehkyRobot);
+    System.out.println(obrnenyRobot);
 }
